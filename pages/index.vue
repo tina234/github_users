@@ -9,9 +9,20 @@
                 <input type="text" placeholder="Search github user..." v-model="user_name">
                 <span @click="fetchUser(user_name)">Search</span>
             </div>
-            <div>
-
-                
+            <div class="user-data" v-if="Object.keys(user).length > 0">
+                <div class="img-box">
+                    <img :src="user.avatar_url" alt="">
+                </div>
+                <div class="main-info-box">
+                    <div class="first-section">  
+                        <div>
+                            <h2>{{ user.login }}</h2>
+                            <p>@{{user.login.toLowerCase() }}</p>
+                            <p>this profile has no bio</p>
+                        </div>
+                        <div><p>Joined: {{ user.url.created_at }}</p></div>
+                    </div> 
+                </div>
             </div>
       </div>
   </div>
@@ -30,7 +41,7 @@ export default {
 
     computed: {
         ...mapGetters ({
-            user: 'getUser',
+            user: 'getUser'
         }),
     },
 

@@ -5,7 +5,7 @@ export const state = () => ({
 })
 
 export const getters = {
-    getUser (state){
+    getUser(state){
         return state.user;
     }
 };

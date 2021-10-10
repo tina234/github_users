@@ -74,5 +74,28 @@ body {
             border-radius: 10px;
         }
     }
+
+    .user-data {
+        background-color: #1e3f62;
+        margin-top: 20px;
+        border-radius: 10px;
+        display: flex;
+
+        .img-box {
+            max-width: 250px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                margin-top: 30px;
+            }
+        }
+
+       
+    }
 }
 
