@@ -19,7 +19,6 @@ export const mutations = {
 export const actions = {
     async fetchUser({commit}, user_name){
        let response = await axios.get('https://api.github.com/users/' + user_name);
-       console.log(response);
        commit('saveUser', response.data);
     }
 };

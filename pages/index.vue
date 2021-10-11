@@ -14,14 +14,20 @@
                     <img :src="user.avatar_url" alt="">
                 </div>
                 <div class="main-info-box">
-                    <div class="first-section">  
+                    <div class="first-section">
                         <div>
                             <h2>{{ user.login }}</h2>
-                            <p>@{{user.login.toLowerCase() }}</p>
-                            <p>this profile has no bio</p>
+                            <a :href="user.html_url" target="_blank" class="hashtag">@{{user.login.toLowerCase() }}</a>
+                            <p v-if="user.bio === null">this profile has no bio</p>
                         </div>
-                        <div><p>Joined: {{ user.url.created_at }}</p></div>
+                        <div><p>Joined {{ user.created_at | formatDate }}</p></div>
                     </div> 
+
+                    <div class="second-section">
+                        <p>Repos <span>{{ user.public_repos }}</span></p>
+                        <p>Followers <span>{{ user.followers }}</span></p>
+                        <p>Following <span>{{ user.following }}</span></p>
+                    </div>
                 </div>
             </div>
       </div>
@@ -36,6 +42,7 @@ export default {
     data (){
         return {
             user_name: '',
+            date: new Date(),
         }
     },
 

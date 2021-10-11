@@ -80,6 +80,7 @@ body {
         margin-top: 20px;
         border-radius: 10px;
         display: flex;
+        padding: 25px 0;
 
         .img-box {
             max-width: 250px;
@@ -88,14 +89,63 @@ body {
             justify-content: center;
 
             img {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
                 border-radius: 50%;
-                margin-top: 30px;
             }
         }
 
-       
+        .main-info-box {
+            width: 100%;
+            padding-right: 40px;
+
+            .first-section {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+
+                h2 {
+                    color: #fff;
+                    font-size: 27px;
+                    margin: 0;
+                    margin-bottom: 8px;
+                    letter-spacing: 1px;
+                }
+
+                .hashtag {
+                    color: #1a75ff;
+                    text-decoration: none;
+                }
+                
+                p {
+                    margin: 30px 0;
+                    color: #cccccc;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .second-section {
+                display: flex;
+                justify-content: space-between;
+                background-color: #0c1927;
+                border-radius: 10px;
+                padding: 10px 45px;
+
+                p {
+                    color:  #cccccc;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    letter-spacing: 1px;
+
+                    span {
+                        font-size: 22px;
+                        font-weight: bold;
+                        margin-top: 8px;
+                    }
+                }
+            }
+        } 
     }
 }
 
