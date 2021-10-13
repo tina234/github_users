@@ -6,10 +6,10 @@
                 <p>LIGHT</p>
             </div>
             <div class="search-box">
-                <input type="text" placeholder="Search github user..." v-model="user_name">
+                <input type="text" placeholder="Search github user..." v-model="user_name" @keyup.enter="fetchUser(user_name)">
                 <span @click="fetchUser(user_name)">Search</span>
             </div>
-            <div class="user-data" v-if="Object.keys(user).length > 0">
+            <div class="user-data-box" v-if="Object.keys(user).length > 0">
                 <div class="img-box">
                     <img :src="user.avatar_url" alt="">
                 </div>
@@ -18,9 +18,9 @@
                         <div>
                             <h2>{{ user.login }}</h2>
                             <a :href="user.html_url" target="_blank" class="hashtag">@{{user.login.toLowerCase() }}</a>
-                            <p v-if="user.bio === null">this profile has no bio</p>
+                            <p v-if="user.bio === null">This profile has no bio</p>
                         </div>
-                        <div><p>Joined {{ user.created_at | formatDate }}</p></div>
+                        <div  class="joined"><p>Joined {{ user.created_at | formatDate }}</p></div>
                     </div> 
 
                     <div class="second-section">
