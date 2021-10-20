@@ -12,7 +12,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel="preconnect", href="https://fonts.googleapis.com" },
+      { rel="preconnect", href="https://fonts.gstatic.com", crossorigin},
+      { href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500;700&display=swap", rel="stylesheet"}
     ]
   },
 
@@ -32,6 +35,21 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     //'@nuxtjs/eslint-module'
+    '@nuxtjs/google-fonts',
+    ['nuxt-fontawesome', {
+      component: 'fa', 
+      imports: [{
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faLightbulb', 'faSun']
+          },
+          {set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faGithub']
+          },
+          {set: '@fortawesome/free-regular-svg-icons',
+          icons: ['faLightbulb']
+          },
+      ]
+   }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

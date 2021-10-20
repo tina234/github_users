@@ -3,7 +3,7 @@
         <div class="container">
             <div class="title-box"> 
                 <h2>devfinder</h2>
-                <p>LIGHT</p>
+                <p>LIGHT<fa :icon="['fas','sun']"/></p>
             </div>
             <div class="search-box">
                 <input type="text" placeholder="Search github user..." v-model="user_name" @keyup.enter="fetchUser(user_name)">
@@ -30,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            <!--<i class="fas fa-sun"></i> -->
       </div>
   </div>
 </template>
